@@ -3,6 +3,7 @@ package sv.edu.utec.controles;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
@@ -14,5 +15,19 @@ EditText edtValor, edtResultado;
         setContentView(R.layout.activity_main);
         edtValor=findViewById(R.id.edtTabla);
         edtResultado=findViewById(R.id.edtMtabla);
+    }
+
+    public void Tabla(View view){
+        int valtabla=Integer.parseInt(edtValor.getText().toString());
+        int resultados;
+        String Resultado="";
+        edtResultado.setText(Resultado);
+        for (int i=0; i<=10; i++){
+            resultados=valtabla*i;
+            Resultado=String.valueOf(resultados);
+
+            edtResultado.append(valtabla+"*"+i+"="+Resultado + "\n");
+        }
+
     }
 }
